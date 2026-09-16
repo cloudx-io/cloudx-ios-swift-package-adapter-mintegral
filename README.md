@@ -24,6 +24,7 @@ flag to retain the adapter registration code.
 
 | Package version | CloudX adapter | Mintegral Ad SDK |
 | --- | --- | --- |
+| `8010600.0.0` | `8.1.6.0` | `8.1.6` |
 | `8010500.0.0` | `8.1.5.0` | `8.1.5` |
 
 The package installs CloudX Core and Mintegral Ad SDK as dependencies. Import
