@@ -1,0 +1,43 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v5
+      - name: Select Xcode 16
+        run: sudo xcode-select --switch /Applications/Xcode_16.4.app
+      - name: Validate manifest
+        run: swift package dump-package
+      - name: Resolve dependencies
+        run: swift package resolve
+      - name: Build and test iOS consumers
+        run: |
+          destination=$(xcrun simctl list devices available --json | \
+            jq -r '[.devices | to_entries[] | select(.key | startswith("com.apple.CoreSimulator.SimRuntime.iOS-")) | .value[] | select(.isAvailable)][0].udid // empty')
+          if [[ -n "$destination" ]]; then
+            xcodebuild test \
+              -scheme CloudXMintegralAdapter \
+              -destination "id=$destination" \
+              CODE_SIGNING_ALLOWED=NO
+          else
+            xcodebuild build-for-testing \
+              -scheme CloudXMintegralAdapter \
+              -destination 'generic/platform=iOS Simulator' \
+              CODE_SIGNING_ALLOWED=NO
+          fi
+      - name: Verify artifact checksum
+        run: |
+          curl --fail --location --output /tmp/CloudXMintegralAdapter.xcframework.zip \
+            https://github.com/cloudx-io/cloudx-ios/releases/download/adapter-mintegral/8.1.5.0/CloudXMintegralAdapter.xcframework.zip
+          test "$(swift package compute-checksum /tmp/CloudXMintegralAdapter.xcframework.zip)" = \
+            "7305858ba1ffe20e4036b6b43e31ffdf79482697512a8247957050edf4160742"
