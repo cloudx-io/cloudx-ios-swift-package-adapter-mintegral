@@ -20,14 +20,14 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package.git",
-            exact: "8.1.6"
+            exact: "8.1.7"
         ),
     ],
     targets: [
         .binaryTarget(
             name: "CloudXMintegralAdapter",
-            url: "https://github.com/cloudx-io/cloudx-ios/releases/download/adapter-mintegral/8.1.6.1/CloudXMintegralAdapter.xcframework.zip",
-            checksum: "ecea4f085f450cbf802052459ee77da2e8b933d3abebb360a999beff0b30b78e"
+            url: "https://github.com/cloudx-io/cloudx-ios-swift-package-adapter-mintegral/releases/download/binary/8010700.0.0/CloudXMintegralAdapter.xcframework.zip",
+            checksum: "746f95d837349cc2ab86024ac61e12963c4381e2422a858e5f6f525f01ac2a78"
         ),
         .target(
             name: "CloudXMintegralAdapterPackage",
