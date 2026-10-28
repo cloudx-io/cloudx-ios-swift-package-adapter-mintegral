@@ -8,7 +8,7 @@
 @implementation CloudXMintegralAdapterObjCTests
 
 - (void)testAdapterIsLinkedAndRegistered {
-    XCTAssertEqualObjects(CLXMintegralAdapterVersion, @"8.1.7.0");
+    XCTAssertEqualObjects(CLXMintegralAdapterVersion, @"8.1.7.1");
     XCTAssertNotNil(NSClassFromString(@"CLXMintegralInitializer"));
 }
 

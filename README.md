@@ -24,6 +24,7 @@ flag to retain the adapter registration code.
 
 | Package version | CloudX adapter | Mintegral Ad SDK |
 | --- | --- | --- |
+| `8010701.0.0` | `8.1.7.1` | `8.1.7` |
 | `8010700.0.0` | `8.1.7.0` | `8.1.7` |
 | `8010601.0.0` | `8.1.6.1` | `8.1.6` |
 | `8010600.0.0` | `8.1.6.0` | `8.1.6` |

@@ -26,8 +26,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "CloudXMintegralAdapter",
-            url: "https://github.com/cloudx-io/cloudx-ios-swift-package-adapter-mintegral/releases/download/binary/8010700.0.0/CloudXMintegralAdapter.xcframework.zip",
-            checksum: "746f95d837349cc2ab86024ac61e12963c4381e2422a858e5f6f525f01ac2a78"
+            url: "https://github.com/cloudx-io/cloudx-ios-swift-package-adapter-mintegral/releases/download/binary/8010701.0.0/CloudXMintegralAdapter.xcframework.zip",
+            checksum: "dbc0b38739fcfc44304852d84ca6c7571ead54f631a0696afafd60fcbd61f577"
         ),
         .target(
             name: "CloudXMintegralAdapterPackage",
