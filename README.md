@@ -30,6 +30,8 @@ flag to retain the adapter registration code.
 | `8010600.0.0` | `8.1.6.0` | `8.1.6` |
 | `8010500.0.0` | `8.1.5.0` | `8.1.5` |
 
+> **Do not use `8010600.0.0` and `8010500.0.0`.** Their framework version fails App Store validation at upload. Package versions never change, so pin `8010601.0.0` or later.
+
 The package installs CloudX Core and Mintegral Ad SDK as dependencies. Import
 `CloudXCore` in the application. The adapter registers when the application
 loads.
